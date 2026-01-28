@@ -22,7 +22,7 @@ placeholder="Tags will appear here..."></textarea>
 async function extractTags(){
   let url = document.getElementById("videoUrl").value;
 
-  let idMatch = url.match(/(?:v=|youtu\.be\/)([^&]+)/);
+  let idMatch = url.match(/(?:youtu\.be\/|v=)([a-zA-Z0-9_-]{11})/);
   if(!idMatch){
     alert("Invalid URL");
     return;
@@ -34,8 +34,8 @@ async function extractTags(){
   let data = await res.json();
 
   if(data.error){
-    alert(data.error);
-    return;
+  document.getElementById("result").value = data.error;
+  return;
   }
 
   document.getElementById("result").value =
