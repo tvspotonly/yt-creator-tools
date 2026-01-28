@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thumbnail Maker</title>
+</head>
+<body>
+
+<h2>Thumbnail Text Preview</h2>
+<input id="text" placeholder="Enter Title">
+<button onclick="show()">Preview</button>
+
+<h1 id="preview"></h1>
+
+<script>
+function show(){
+document.getElementById("preview").innerText=
+document.getElementById("text").value;
+}
+</script>
+
+</body>
+</html>

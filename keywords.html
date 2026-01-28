@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Keyword Generator</title>
+</head>
+<body>
+
+<h2>Keyword Generator</h2>
+<input id="topic" placeholder="Enter video topic">
+<button onclick="gen()">Generate</button>
+
+<ul id="out"></ul>
+
+<script>
+function gen(){
+let t=document.getElementById("topic").value;
+let list=[
+t+" video",
+t+" shorts",
+t+" viral",
+t+" hindi",
+t+" tips"
+];
+let out=document.getElementById("out");
+out.innerHTML="";
+list.forEach(k=>{
+let li=document.createElement("li");
+li.innerText=k;
+out.appendChild(li);
+});
+}
+</script>
+
+</body>
+</html>
